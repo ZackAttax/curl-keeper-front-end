@@ -1,0 +1,41 @@
+.NavbarItems {
+    background: linear-gradient(45deg, turquoise, #21726A);
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+.navbar-logo {
+    color: #fff;
+    justify-self: start;
+    margin-left: 90 px;
+    cursor: pointer;
+}
+.nav-menu {
+    display: grid;
+    grid-template-columns: repeat(6, auto); 
+    grid-gap: 10px;
+    list-style: none;
+    text-align: center;
+    width: 80vw;
+    justify-content: end;
+    margin-right: 2rem;
+}
+.nav-links {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+.nav-links:hover {
+    background-color: rgb(0, 68, 57);
+    border-radius: 4px;
+    transition: all 0.2s ease-out;
+}
+.fa-bars {
+    color: #fff;
+}
+
+.menu-icon {
+    display: none;
+}
