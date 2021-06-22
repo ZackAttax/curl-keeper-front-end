@@ -6,11 +6,11 @@ class UserForm extends Component {
     state = {
         username: "",
         password: "",
-        curl_pattern: "",
-        curl_type: "",
-        porosity: "",
-        density: "",
-        width: ""
+        curl_pattern: "2a",
+        curl_type: "wavy",
+        porosity: "low",
+        density: "thin",
+        width: "thin"
     }
 
     handleChange = event => {
@@ -30,55 +30,82 @@ class UserForm extends Component {
 
                 <h1>Sign up</h1>
                 <label>Username</label>
-                <input name='username'
+                <input name='username' id="username"
                 placeholder='Username'
                 value={this.state.username}
                 onChange={this.handleChange}
-                /><br/>
+                required/><br/>
 
                 <label>Password</label>
                 <input
                 type='password'
-                name='password'
+                name='password' id='password'
                 placeholder='Password'
                 value={this.state.password}
                 onChange={this.handleChange}
-                /><br/>
+                required/><br/>
+
+                <label>Password Confirm</label>
+                <input 
+                type="password" 
+                placeholder="Confirm Password" id="confirm_password" 
+                required/><br/>
 
                 <label>Curl Pattern</label>
-                <input name='curl_pattern'
-                placeholder='Curl pattern'
+                <select name="curl_pattern"
                 value={this.state.curl_pattern}
-                onChange={this.handleChange}
-                /><br/>
+                onChange={this.handleChange}>
+                    <option value="2a">2A</option>
+                    <option value="2b">2B</option>
+                    <option value="2c">2C</option>
+                    <option value="3a">3A</option>
+                    <option value="3b">3B</option>
+                    <option value="3c">3C</option>
+                    <option value="4a">4A</option>
+                    <option value="4b">4B</option>
+                    <option value="4c">4C</option>
+                </select>
+                <br/>
 
                 <label>Curl Type</label>
-                <input name='curl_type'
-                placeholder='Curl type'
+                <select name="curl_type"
                 value={this.state.curl_type}
-                onChange={this.handleChange}
-                /><br/>
+                onChange={this.handleChange}>
+                    <option value="wavy">Wavy</option>
+                    <option value="curly">Curly</option>
+                    <option value="oily">Oily</option>
+                </select>
+                <br/>
 
                 <label>Porosity</label>
-                <input name='porosity'
-                placeholder='Porosity'
+                <select name="porosity"
                 value={this.state.porosity}
-                onChange={this.handleChange}
-                /><br/>
+                onChange={this.handleChange}>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <br/>
 
                 <label>Density</label>
-                <input name='density'
-                placeholder='Density'
+                <select name="density"
                 value={this.state.density}
-                onChange={this.handleChange}
-                /><br/>
+                onChange={this.handleChange}>
+                    <option value="thin">Thin</option>
+                    <option value="medium">Medium</option>
+                    <option value="thick">Thick</option>
+                </select>
+                <br/>
 
                 <label>Width</label>
-                <input name='width'
-                placeholder='Width'
+                <select name="width"
                 value={this.state.width}
-                onChange={this.handleChange}
-                /><br/>
+                onChange={this.handleChange}>
+                    <option value="thin">Thin</option>
+                    <option value="medium">Medium</option>
+                    <option value="thick">Thick</option>
+                </select>
+                <br/>
 
                 <input type='submit'/>
             </form>
