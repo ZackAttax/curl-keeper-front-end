@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-//import { connect } from 'react-redux';
-// import { fetch } from '.../src/actions/fetchNewUser';
+import { connect } from 'react-redux';
+import { createUser } from '../../actions/createUser';
 
 class UserForm extends Component {
     state = {
@@ -20,8 +20,8 @@ class UserForm extends Component {
     }
      handleSubmit = event => {
          console.log(event)
-    //     event.preventDefault()
-    //     this.props.fetchNewUser(this.state)
+         event.preventDefault()
+         this.props.createUser(this.state)
      }
 
     render() {
@@ -48,11 +48,11 @@ class UserForm extends Component {
                 <label>Password Confirm</label>
                 <input 
                 type="password" 
-                placeholder="Confirm Password" id="confirm_password" 
+                placeholder="Confirm Password" id="confirmPassword" 
                 required/><br/>
 
                 <label>Curl Pattern</label>
-                <select name="curl_pattern"
+                <select name="curl_pattern" id='curlPattern'
                 value={this.state.curl_pattern}
                 onChange={this.handleChange}>
                     <option value="2a">2A</option>
@@ -68,7 +68,7 @@ class UserForm extends Component {
                 <br/>
 
                 <label>Curl Type</label>
-                <select name="curl_type"
+                <select name="curl_type" id='curlType'
                 value={this.state.curl_type}
                 onChange={this.handleChange}>
                     <option value="wavy">Wavy</option>
@@ -78,7 +78,7 @@ class UserForm extends Component {
                 <br/>
 
                 <label>Porosity</label>
-                <select name="porosity"
+                <select name="porosity" id='porosity'
                 value={this.state.porosity}
                 onChange={this.handleChange}>
                     <option value="low">Low</option>
@@ -88,7 +88,7 @@ class UserForm extends Component {
                 <br/>
 
                 <label>Density</label>
-                <select name="density"
+                <select name="density" id='density'
                 value={this.state.density}
                 onChange={this.handleChange}>
                     <option value="thin">Thin</option>
@@ -98,7 +98,7 @@ class UserForm extends Component {
                 <br/>
 
                 <label>Width</label>
-                <select name="width"
+                <select name="width" id='width'
                 value={this.state.width}
                 onChange={this.handleChange}>
                     <option value="thin">Thin</option>
@@ -113,8 +113,8 @@ class UserForm extends Component {
     }
 }
 
-// const mapDispatchToProps = dispatch => ({
-//     fetchNewUser: userInfo => dispatch(fetchNewUser(userInfo))
-//   })
+const mapDispatchToProps = dispatch => ({
+     createUser: userInfo => dispatch(createUser(userInfo))
+   })
   
-  export default UserForm;
+  export default connect(null, mapDispatchToProps)(UserForm);

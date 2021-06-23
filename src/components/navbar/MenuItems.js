@@ -6,13 +6,8 @@
         cName: 'nav-links'
     },
     {
-        title: 'New Wash Day',
-        url: '/wash-day/new',
-        cName: 'nav-links'
-    },
-    {
-        title: 'New Refresh Day',
-        url: '/refresh-day/new',
+        title: 'New Day',
+        url: '/day/new',
         cName: 'nav-links'
     },
     {
@@ -22,11 +17,11 @@
     },
     {
         title: 'All',
-        url: '/day/index',
+        url: '/days',
         cName: 'nav-links'
     },
     {
-        title: 'Log Out',
+        title: 'Login',
         url: '/login/new',
         cName: 'nav-links'
     }
