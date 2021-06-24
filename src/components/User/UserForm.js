@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createUser } from '../../actions/createUser';
+import { Link } from 'react-router-dom';
 
 class UserForm extends Component {
     state = {
@@ -106,8 +107,8 @@ class UserForm extends Component {
                     <option value="thick">Thick</option>
                 </select>
                 <br/>
-
-                <input type='submit'/>
+                <input type='submit'/><br/>
+                <Link className='links' to='/login'>Login</Link>
             </form>
         )
     }

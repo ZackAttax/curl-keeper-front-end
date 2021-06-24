@@ -21,8 +21,8 @@
         cName: 'nav-links'
     },
     {
-        title: 'Login',
-        url: '/login/new',
+        title: 'Log out',
+        url: '/logout',
         cName: 'nav-links'
     }
 ]

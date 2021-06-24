@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import DayCard from '../components/DayCard'
 
 const DayCards = (props) => {
-    console.log(props)
+    
     return (
         <ul className="day-cards">
             {props.days.map(day => <DayCard key={day.id} {...day} />)}
