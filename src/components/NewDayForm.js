@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
+import { createDay } from '../actions/createDay'
 
 class NewDayForm extends Component {
+    
     state = {
         products: "",
         process: "",
-        rating: "",
-        weather: ""
+        rating: 1,
+        weather: "",
+        user_id: this.props.user.id
     }
     handleChange = event => {
         this.setState({
@@ -15,37 +17,46 @@ class NewDayForm extends Component {
         });
     }
      handleSubmit = event => {
-         console.log(event)
          event.preventDefault()
-         this.props.createUser(this.state)
+         this.props.createDay(this.state)
      }
     render(){
-        debugger
+       
         
         return (
             <div>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label>
                     Products:
-                    <input type="textarea" name="products" value={this.state.products} 
-                    placeholder="Products"/>
                     </label><br/>
+                    <textarea type="textarea" name="products" value={this.state.products} 
+                    onChange={this.handleChange}
+                    placeholder="Products"/><br/>
 
                     <label>
                     Process:
-                    <input type="text" name="name" />
                     </label><br/>
+                    <textarea type="text" name="process" value={this.state.process}
+                    onChange={this.handleChange}/><br/>
 
                     <label>
-                    Name:
-                    <input type="text" name="name" />
+                    Weather:
                     </label><br/>
+                    <input type="text" name="weather" value={this.state.weather}
+                    onChange={this.handleChange}/><br/>
 
                     <label>
-                    Name:
-                    <input type="text" name="name" />
+                    Rating:
+                    <select type="radio" name="rating"
+                    value={this.state.rating}
+                    onChange={this.handleChange}>
+                    <option value={1}>1</option>
+                    <option value={2}>3</option>
+                    <option value={3}>3</option>
+                    <option value={4}>4</option>
+                    </select>
                     </label><br/>
-
+                    {/* <input type="hidden" name="user_id" value={console.log(this.props.user.id)}></input> */}
                     <input type="submit" value="Submit" />
                 </form>
             </div>
@@ -57,4 +68,7 @@ class NewDayForm extends Component {
 const mapStateToProps = (state) => ({
     user: state.user.user
 })
-export default connect(mapStateToProps)(NewDayForm)
+const mapDispatchToProps = dispatch => ({
+    createDay: dayInfo => dispatch(createDay(dayInfo))
+  })
+export default connect(mapStateToProps, mapDispatchToProps)(NewDayForm)

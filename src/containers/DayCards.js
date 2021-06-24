@@ -3,10 +3,10 @@ import { connect } from 'react-redux'
 import DayCard from '../components/DayCard'
 
 const DayCards = (props) => {
-    
+    const sortedByRating = props.days.sort((a, b)=>{return b.rating - a.rating});
     return (
         <ul className="day-cards">
-            {props.days.map(day => <DayCard key={day.id} {...day} />)}
+            {sortedByRating.map(day => <DayCard key={day.id} {...day} />)}
             </ul>
     )
 }

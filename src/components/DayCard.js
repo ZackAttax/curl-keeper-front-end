@@ -2,6 +2,7 @@ import React from 'react'
 
 const DayCard = (props) => {
     const {products, process, rating, id, weather} = props
+   
     return (
         <div className='card'>
             <li id={id}>

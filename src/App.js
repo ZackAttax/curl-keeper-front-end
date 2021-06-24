@@ -12,7 +12,7 @@ import NewDayForm from './components/NewDayForm'
 
 
 
-const GuestView = (props) =>{
+const GuestView = () =>{
    return (
        <div className="App">
            <Switch>
@@ -23,14 +23,14 @@ const GuestView = (props) =>{
        </div>
    )
 }
-const UserView = (props) => {
+const UserView = () => {
    return (
        <div className="App">
            <Navbar />
            <Switch>
                <Route path='/day/new' component={NewDayForm} />
-               <Route path='/home' component={User} />
                <Route path='/days' component={DayCards} />
+               <Route path='/home' component={User} />
            </Switch>
        </div>
        )

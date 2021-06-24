@@ -1,28 +1,29 @@
 import React from "react"
-
-
+import { connect } from "react-redux"
+import DayCard from '../DayCard'
 const User = (props) => {
-    return(<div className='user'>User</div>)
-    // this.props = {
-    //     username: "",
-    //     curl_pattern: "",
-    //     curl_type: "",
-    //     porosity: "",
-    //     density: "",
-    //     width: ""
-    //}
-    // render() {
-    // return (
-    //     <div>
-    //     Username: {this.props.username}
-    //     Curl Pattern: {this.props.curl_pattern}
-    //     curl_type: {this.props.curl_type}
-    //     porosity: {this.props.porosity}
-    //     density: {this.props.density}
-    //     width: {this.props.width}
-    //     </div>
-    // )
-    // }
+    debugger
+    const sortedByRating = props.user.days.sort((a, b)=>{return b.rating - a.rating});
+   
+    return (
+        <ul>
+            <li key='1'>Username: {props.user.username}</li>
+            <li key='2'>Curl Pattern: {props.usercurl_pattern}</li>
+            <li key='3'>Curl Type: {props.user.curl_type}</li>
+            <li key='4'>Porosity: {props.user.porosity}</li>
+            <li key='5'>Density: {props.user.density}</li>
+            <li key='6'>Width: {props.user.width}</li>
+
+            <ul className="day-cards">
+            {sortedByRating.map(day => <DayCard key={day.id} {...day} />)}
+            </ul>
+
+        </ul>
+    )
 
 }
-export default User
+const mapStateToProps = (state) => ({
+    user: state.user.user
+})
+
+export default connect(mapStateToProps)(User)
