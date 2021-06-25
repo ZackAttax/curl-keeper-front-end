@@ -16,8 +16,7 @@ class FilterByHairType extends Component {
         density: "thin",
         width: "thin"
     }
-
-    
+    //{curl_pattern, curl_type, porosity, density, width}   
     componentDidMount() {
         this.props.getAllTheData()
     }
@@ -27,10 +26,18 @@ class FilterByHairType extends Component {
         });
     }
 
-    //const curlPatternFilter = this.props.users.filter(user => user.curl_pattern === this.state.curl_pattern)
+    curlPatternFilter() {if(this.props.users[9]){
+      return(
+          this.props.users.filter(user => user.curl_pattern === this.state.curl_pattern &&
+              user.curl_type === this.state.curl_type && user.porosity === this.state.porosity
+              && user.density === this.state.density && user.width === this.state.width
+            )
+
+      )
+    }}
     
     render() {
-       
+        
         // const users = this.props.users
         //     users.map(hairType => return <HairTypeCard key={hairType.id}>{hairType.name}</HairTypeCard>)
         
@@ -53,9 +60,49 @@ class FilterByHairType extends Component {
                                 <option value="4c">4C</option>
                         </select>
                             <br/>
+
+                <label>Curl Type</label>
+                <select name="curl_type" id='curlType'
+                value={this.state.curl_type}
+                onChange={this.handleFormChange}>
+                    <option value="wavy">Wavy</option>
+                    <option value="curly">Curly</option>
+                    <option value="oily">Oily</option>
+                </select>
+                <br/>
+
+                <label>Porosity</label>
+                <select name="porosity" id='porosity'
+                value={this.state.porosity}
+                onChange={this.handleFormChange}>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <br/>
+
+                <label>Density</label>
+                <select name="density" id='density'
+                value={this.state.density}
+                onChange={this.handleFormChange}>
+                    <option value="thin">Thin</option>
+                    <option value="medium">Medium</option>
+                    <option value="thick">Thick</option>
+                </select>
+                <br/>
+
+                <label>Width</label>
+                <select name="width" id='width'
+                value={this.state.width}
+                onChange={this.handleFormChange}>
+                    <option value="thin">Thin</option>
+                    <option value="medium">Medium</option>
+                    <option value="thick">Thick</option>
+                </select>
+                <br/>
                     </form>
                     <ul className='hair-type-cards'>
-                    {this.props.users[9] && this.props.users.map(hairType => <HairTypeCard key={hairType.id} {...hairType} />)}
+                    {this.props.users.length > 1 && this.curlPatternFilter().map(hairType => <HairTypeCard key={hairType.id} {...hairType} />)}
                     </ul>
                 </div>
         )
