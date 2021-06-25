@@ -7,10 +7,10 @@ import LoginForm from './components/Session/LoginForm'
 import User from './components/User/User'
 import DayCards from './containers/DayCards'
 import { connect } from 'react-redux'
+//import { getAllTheData } from './actions/getAllTheData'
 import { setDays } from './actions/setDays'
 import NewDayForm from './components/NewDayForm'
-
-
+import FilterByHairType from './components/FilterByHairType/FilterByHairType'
 
 const GuestView = () =>{
    return (
@@ -29,6 +29,7 @@ const UserView = () => {
            <Navbar />
            <Switch>
                <Route path='/day/new' component={NewDayForm} />
+               <Route path='/pinned_days' component={FilterByHairType} />
                <Route path='/days' component={DayCards} />
                <Route path='/home' component={User} />
            </Switch>
@@ -42,7 +43,6 @@ class App extends Component {
     componentDidMount() {
         this.props.setDays()
     }
-
     render() {
         if(this.props.loggedIn){
             return <UserView/>
@@ -53,6 +53,7 @@ class App extends Component {
 }
 const mapStateToProps = (state) => ({
     user: state.user.user,
-    loggedIn: state.user.loggedIn
+    loggedIn: state.user.loggedIn,
+    users: state.users.users
 })
 export default connect(mapStateToProps , { setDays })(App);

@@ -19,7 +19,14 @@ class NewDayForm extends Component {
      handleSubmit = event => {
          event.preventDefault()
          this.props.createDay(this.state)
-     }
+         this.setState({
+            products: "",
+            process: "",
+            rating: 1,
+            weather: "",
+         })
+         this.props.history.push('/days')
+        }
     render(){
        
         

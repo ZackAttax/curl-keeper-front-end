@@ -12,7 +12,7 @@
     },
     {
         title: 'Pinned',
-        url: '/pinned-days/index',
+        url: '/pinned_days',
         cName: 'nav-links'
     },
     {
