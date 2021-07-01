@@ -17,3 +17,4 @@ export const createDay = (day) => {
         })
     )}
 }
+//const setDays = { type: "SET_DAYS", payload: monday}

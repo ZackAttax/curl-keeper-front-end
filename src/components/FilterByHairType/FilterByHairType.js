@@ -44,7 +44,7 @@ class FilterByHairType extends Component {
         // function that filter by state returns filtered array map
             return(
                 <div> 
-               
+                    <h3>Filter by Hair Type</h3>
                     <form>
                         <label>Curl Pattern</label>
                         <select name="curl_pattern" id='curlPattern'

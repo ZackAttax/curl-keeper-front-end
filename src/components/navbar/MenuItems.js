@@ -16,13 +16,13 @@
         cName: 'nav-links'
     },
     {
-        title: 'All',
-        url: '/days',
+        title: 'Top Days',
+        url: '/top_days',
         cName: 'nav-links'
     },
-    {
-        title: 'Log out',
-        url: '/logout',
-        cName: 'nav-links'
-    }
+    // {
+    //     title: 'Log out',
+    //     url: '/logout',
+    //     cName: 'nav-links'
+    // }
 ]

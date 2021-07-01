@@ -11,6 +11,7 @@ import { connect } from 'react-redux'
 import { setDays } from './actions/setDays'
 import NewDayForm from './components/NewDayForm'
 import FilterByHairType from './components/FilterByHairType/FilterByHairType'
+import './App.css'
 
 const GuestView = () =>{
    return (
@@ -30,7 +31,7 @@ const UserView = () => {
            <Switch>
                <Route path='/day/new' component={NewDayForm} />
                <Route path='/pinned_days' component={FilterByHairType} />
-               <Route path='/days' component={DayCards} />
+               <Route path='/top_days' component={DayCards} />
                <Route path='/home' component={User} />
            </Switch>
        </div>
