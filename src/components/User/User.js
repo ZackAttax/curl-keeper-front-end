@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 import DayCard from '../DayCard'
 
 const User = (props) => {
-    const sortedByRating = props.user.days.sort((a, b)=>{return b.rating - a.rating});
+    const sortedByRating = props.user.days.length > 1 && props.user.days.sort((a, b)=>{return b.rating - a.rating});
    
     return (
         <ul>
@@ -15,7 +15,7 @@ const User = (props) => {
             <li key='6'>Width: {props.user.width}</li>
 
             <ul className="day-cards">
-            {sortedByRating.map(day => <DayCard key={day.id} {...day} />)}
+            {props.user.days.length > 1 && sortedByRating.map(day => <DayCard key={day.id} {...day} />)}
             </ul>
 
         </ul>

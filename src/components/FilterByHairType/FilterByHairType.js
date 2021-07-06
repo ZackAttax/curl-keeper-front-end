@@ -26,7 +26,7 @@ class FilterByHairType extends Component {
         });
     }
 
-    curlPatternFilter() {if(this.props.users[9]){
+    curlPatternFilter() {if(this.props.users[0]){
       return(
           this.props.users.filter(user => user.curl_pattern === this.state.curl_pattern &&
               user.curl_type === this.state.curl_type && user.porosity === this.state.porosity
@@ -38,10 +38,6 @@ class FilterByHairType extends Component {
     
     render() {
         
-        // const users = this.props.users
-        //     users.map(hairType => return <HairTypeCard key={hairType.id}>{hairType.name}</HairTypeCard>)
-        
-        // function that filter by state returns filtered array map
             return(
                 <div> 
                     <h3>Filter by Hair Type</h3>

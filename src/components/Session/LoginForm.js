@@ -7,8 +7,7 @@ import { Link } from 'react-router-dom';
 class LoginForm extends Component {
     state = {
         username: "",
-        password: "",
-        passwordConfirmation: ""
+        password: ""
     }
     handleChange = event => {
         this.setState({
@@ -19,6 +18,7 @@ class LoginForm extends Component {
          
          event.preventDefault()
          this.props.createSession(this.state)
+         
      }
 
      render() {
