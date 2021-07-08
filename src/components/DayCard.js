@@ -8,7 +8,7 @@ const DayCard = (props) => {
         <div className='card'>
             <li id={id}>
             <p>products: {products}</p>
-                    <LikeButton day={props} />
+                    <LikeButton />
             <p>process: {process}</p>
             <p>rating: {rating}</p>
             <p>weather: {weather}</p>

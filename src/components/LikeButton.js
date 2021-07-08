@@ -14,6 +14,7 @@ class LikeButton extends Component {
     }
 
     handleClick = e => {
+        debugger
         e.preventDefault()
         const newState = !this.state.liked
         this.setState({liked: newState})
