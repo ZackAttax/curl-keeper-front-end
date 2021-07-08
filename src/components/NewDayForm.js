@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { createDay } from '../actions/createDay'
+import { updateUser } from "../actions/updateUser";
 
 class NewDayForm extends Component {
     
@@ -17,8 +18,10 @@ class NewDayForm extends Component {
         });
     }
      handleSubmit = event => {
+         debugger
          event.preventDefault()
          this.props.createDay(this.state)
+         this.props.updateUser(this.state.user_id)
          this.setState({
             products: "",
             process: "",
@@ -76,6 +79,7 @@ const mapStateToProps = (state) => ({
     user: state.user.user
 })
 const mapDispatchToProps = dispatch => ({
+    updateUser: userId => dispatch(updateUser(userId)),
     createDay: dayInfo => dispatch(createDay(dayInfo))
   })
 export default connect(mapStateToProps, mapDispatchToProps)(NewDayForm)

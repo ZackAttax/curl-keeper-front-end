@@ -23,6 +23,7 @@ class UserForm extends Component {
          console.log(event)
          event.preventDefault()
          this.props.createUser(this.state)
+         this.props.history.push('/days')
      }
 
     render() {

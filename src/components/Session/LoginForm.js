@@ -18,7 +18,7 @@ class LoginForm extends Component {
          
          event.preventDefault()
          this.props.createSession(this.state)
-         
+         this.props.history.push('/home')
      }
 
      render() {

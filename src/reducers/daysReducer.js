@@ -3,6 +3,7 @@ const initialDaysState = {
 }
 
  const daysReducer = (state=initialDaysState, action) => {
+
     switch (action.type){
         case "SET_DAYS":
             return {...state, days: action.payload}
