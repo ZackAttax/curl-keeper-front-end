@@ -5,6 +5,7 @@ const initialUserState = {
 }
 
 const userReducer = (state=initialUserState, action) => {
+    
     switch (action.type){
         case 'CREATE_USER':
             return {...state, user: action.payload, loggedIn: true}

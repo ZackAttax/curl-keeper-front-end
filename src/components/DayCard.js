@@ -1,4 +1,5 @@
 import React from 'react'
+import LikeButton from './LikeButton'
 
 const DayCard = (props) => {
     const {products, process, rating, id, weather} = props
@@ -6,7 +7,8 @@ const DayCard = (props) => {
     return (
         <div className='card'>
             <li id={id}>
-            <p>products: {products}</p>  
+            <p>products: {products}</p>
+                    <LikeButton day={props} />
             <p>process: {process}</p>
             <p>rating: {rating}</p>
             <p>weather: {weather}</p>

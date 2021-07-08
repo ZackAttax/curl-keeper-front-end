@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Curl Keeper 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is an app to keep track of and rate the success and failures for people using the Curly Girl Method.
+It also allows you to see peoples most successful days and sort days by different hair types that are the same as yours.
 
 ## Available Scripts
 

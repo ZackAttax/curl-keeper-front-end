@@ -18,7 +18,7 @@ class NewDayForm extends Component {
         });
     }
      handleSubmit = event => {
-         debugger
+         
          event.preventDefault()
          this.props.createDay(this.state)
          this.props.updateUser(this.state.user_id)
