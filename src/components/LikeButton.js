@@ -22,7 +22,7 @@ class LikeButton extends Component {
 
         
         return (
-            <button onClick={this.handleClick}>{this.props.products}Liked: {this.state.liked ? "LIKED!" : null}</button>
+            <button onClick={this.handleClick}>Liked: {this.state.liked ? "LIKED!" : null}</button>
             )
         }
 }
