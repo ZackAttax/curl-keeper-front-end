@@ -7,6 +7,5 @@ import likeProduct from './likeProduct'
 export const reducer = combineReducers({
     days: daysReducer,
     user: userReducer,
-    users: usersReducer,
-    days: likeProduct
+    users: usersReducer
   })
